@@ -4,22 +4,33 @@
 .calculator-container {
     width: 30em;
     height: 40em;
-    background-color: rgb(2, 126, 134);
+    background-color: rgba(43,90,170,255);
+    margin:auto;
+    display: grid;
+    grid-template-rows: 15% 90%;
 }
 .calculator-display {
-    width: 25em;
+    
     height: 3em;
-    background-color: rgb(201, 216, 186);
+    background-color: #babfa8;
     border: 2px solid black;
+    margin: 1em;
 
 }
 .calculator-buttons {
-    background-color: beige;  
+    background-color: rgba(43,90,170,255);  
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 .button {
     background-color: rgb(182, 182, 182);
-    display: flex;  
-    justify-content: space-evenly;
+    border: 2px solid black;
+    margin:1em;
+    text-align: center;
+    padding:1.5em;
+    font-size: large;
+    
+
 
 }
