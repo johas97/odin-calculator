@@ -1,0 +1,25 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+
+.calculator-container {
+    width: 30em;
+    height: 40em;
+    background-color: rgb(2, 126, 134);
+}
+.calculator-display {
+    width: 25em;
+    height: 3em;
+    background-color: rgb(201, 216, 186);
+    border: 2px solid black;
+
+}
+.calculator-buttons {
+    background-color: beige;  
+}
+
+.button {
+    background-color: rgb(182, 182, 182);
+    display: flex;  
+    justify-content: space-evenly;
+
+}
