@@ -79,8 +79,18 @@ clearButtonDel.addEventListener('click', () => {
 
 const dotButtonRef = document.querySelector(".button-dot");
 dotButtonRef.addEventListener('click', () => {
-    for (i=displayVal.length(); i < 0; i--) {
-        console.log(i);
+   // console.log(displayVal.length);
+
+    for (i=displayVal.length; i >= 0; i--) {
+        if (displayVal[i] === ' ') {
+            let okWithDot = true;
+            break;
+        }
+        else if (displayVal[i] === '.') {
+          let okWithDot = false;
+          break;
+        }
+
     }
     
     if (displayVal.slice(-1) !== ".") {
