@@ -52,12 +52,39 @@ numButtonRef.forEach(function(element){
 const eqButtonRef = document.querySelector(".button-equals");
 eqButtonRef.addEventListener('click', () => {
    let displayValArray = displayVal.split(" ");
-    let displayValtemp;
 
+//Checking for operation order 
+
+while (displayValArray.includes("*")) {
+    indexForSubCalc = displayValArray.indexOf("*") - 1;
+    SubCalcArr = displayValArray.slice(indexForSubCalc, indexForSubCalc + 3);
+    SubCalcResult = operate (SubCalcArr[0], SubCalcArr[1], SubCalcArr[2]);
+    displayValArray.splice(indexForSubCalc, 3, SubCalcResult);
+    console.log("Hi");
+   
+    if (displayValArray.length === 1) {
+        displayValsum = displayValArray[0];
+    }
+}
+
+while (displayValArray.includes("/")) {
+    indexForSubCalc = displayValArray.indexOf("/") - 1;
+    SubCalcArr = displayValArray.slice(indexForSubCalc, indexForSubCalc + 3);
+    SubCalcResult = operate (SubCalcArr[0], SubCalcArr[1], SubCalcArr[2]);
+    displayValArray.splice(indexForSubCalc, 3, SubCalcResult);
+
+    if (displayValArray.length === 1) {
+        displayValsum = displayValArray[0];
+    }
+
+}
+
+//Reading style calculation
     while(displayValArray[1]) {
         displayValsum = operate(parseFloat(displayValArray[0]),displayValArray[1], parseFloat(displayValArray[2]));
         displayValArray.splice(0,3);
         displayValArray.unshift(displayValsum);
+        
         
     }
     displayVal = displayValsum;
@@ -79,7 +106,6 @@ clearButtonDel.addEventListener('click', () => {
 
 const dotButtonRef = document.querySelector(".button-dot");
 dotButtonRef.addEventListener('click', () => {
-   // console.log(displayVal.length);
 
     for (i=displayVal.length; i >= 0; i--) {
         if (displayVal[i] === ' ') {
